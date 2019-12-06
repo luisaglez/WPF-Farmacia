@@ -1,0 +1,115 @@
+﻿<Window x:Class="Farmacia.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Farmacia"
+        mc:Ignorable="d"
+           xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" Height="600" Width="1200" WindowStyle="None" WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <Image Source="/Asse/fondo.jpg" Stretch="UniformToFill" Margin="0,72,0,0" />
+        <materialDesign:ColorZone
+  Mode="PrimaryLight"
+  Padding="16" Height="72" Background="#FFF9FCFD">
+            <StackPanel
+    Orientation="Horizontal">
+                <ToggleButton
+      Style="{DynamicResource MaterialDesignHamburgerToggleButton}" />
+                <TextBlock VerticalAlignment="Center"  
+      Margin="16,-6,0,-12" Height="58" Width="157" FontWeight="Bold"><Run Foreground="#FF2E9EB0" FontSize="40" Text="MediTec"/></TextBlock>
+            </StackPanel>
+        </materialDesign:ColorZone>
+        <Grid Margin="668,-162,-712,100">
+            <materialDesign:PackIcon Kind="Barcode"  Margin="14,326,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706"/>
+            <TextBox x:Name="TextBoxFolio" materialDesign:HintAssist.Hint="Folio" Margin="47,307,969,303" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="359.344"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+                <Binding
+      Path="Name"
+      UpdateSourceTrigger="PropertyChanged"/>
+            </TextBox>
+            <materialDesign:PackIcon Kind="Hospital" Margin="14,376,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706" />
+            <TextBox x:Name="TextBoxNombre" materialDesign:HintAssist.Hint="Nombre" Margin="46,358,970,254" RenderTransformOrigin="0.5,0.5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="359.344"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <materialDesign:PackIcon Kind="FormatColorFill" Margin="14,422,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706" />
+            <TextBox x:Name="TextBoxContenido" materialDesign:HintAssist.Hint="Contenido" Margin="44,404,972,208" RenderTransformOrigin="0.5,0.5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}" TextChanged="TextBoxContenido_TextChanged">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="359.344"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <materialDesign:PackIcon Kind="BookmarkPlusOutline" Margin="14,470,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706" />
+            <TextBox x:Name="TextBoxUnidades" materialDesign:HintAssist.Hint="Unidades" Margin="45,445,971,157" RenderTransformOrigin="0.5,0.5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="359.344"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <materialDesign:PackIcon Kind="Injection" Margin="16,520,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706"  />
+            <TextBox x:Name="TextBoxCategoria" materialDesign:HintAssist.Hint="Categoria" Margin="47,493,969,111" RenderTransformOrigin="0.5,0.5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
+
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="360.202"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <materialDesign:PackIcon Kind="CurrencyUsd"  Margin="16,570,0,0" Height="24" Width="26" RenderTransformOrigin="-5.25,2.706" />
+            <TextBox x:Name="TextBoxPrecio" materialDesign:HintAssist.Hint="Precio" Margin="43,547,973,59" RenderTransformOrigin="0.5,0.5" Text="{Binding Name, UpdateSourceTrigger=PropertyChanged}">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="359.68"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+
+        </Grid>
+        <materialDesign:PackIcon Kind="CartOutline" Margin="1105,10,0,0" Height="29" Width="39" RenderTransformOrigin="0.354,0.145" />
+        <Button x:Name="ButtonClose" Style="{StaticResource MaterialDesignFloatingActionMiniAccentButton}" Width="Auto" Height="Auto" Padding="0" Background="{x:Null}" BorderBrush="{x:Null}" Click="ButtonClose_Click" Margin="1149,0,10,551" RenderTransformOrigin="-1.5,0.7" FontSize="48" FontWeight="Medium" FontStyle="Oblique">
+            <materialDesign:PackIcon Kind="Close"/>
+        </Button>
+        <materialDesign:PackIcon Kind="ContentSaveEditOutline" Margin="1096,253,0,0" Height="38" Width="48" RenderTransformOrigin="0.354,0.145" />
+        <Button x:Name="ButtonGuardar" Foreground="White" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" ToolTip="Guardar Medicamento Nuevo" Margin="992,254,100,303" Content="Guardar" Height="Auto" Click="ButtonGuardar_Click" Background="#FF0A55A0" BorderBrush="#FF0A55A0" />
+        <materialDesign:PackIcon Kind="EditOutline" Margin="1096,309,0,0" Height="38" Width="48" RenderTransformOrigin="0.354,0.145"/>
+        <Button x:Name="ButtonModificar" Foreground="White" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" ToolTip="Modificar Medicamento" Margin="992,313,100,244" Content="Modificar" Height="Auto" Click="ButtonModificar_Click" Background="#FF0A55A0" BorderBrush="#FF0A55A0" />
+
+        <materialDesign:PackIcon Kind="TrashCanOutline" Margin="1104,365,0,0" Height="34" Width="40" />
+        <Button x:Name="ButtonEliminar" Style="{StaticResource MaterialDesignRaisedButton}" ToolTip="Eliminar Registro" Margin="994,367,98,191" RenderTransformOrigin="0.5,0.5"  Background="#FF0A55A0" Click="ButtonEliminar_Click" Height="Auto" Content="Eliminar" BorderBrush="#FF0A55A0" />
+        <Image Source="/Asse/icono.png" Stretch="UniformToFill" HorizontalAlignment="Left" Height="60" Margin="230,7,0,525"  Width="60" RenderTransformOrigin="3.937,1.072"/>
+
+        <materialDesign:PackIcon Kind="Magnify" Margin="1092,194,0,0" Height="32" Width="42" RenderTransformOrigin="-5.25,2.706"  />
+        <Button x:Name="ButtonBuscar"  Foreground="White" Style="{StaticResource MaterialDesignRaisedAccentButton}" Width="100" ToolTip="Buscar Medicamentos" Margin="992,194,100,360" Content="Buscar" Click="ButtonBuscar_Click" Background="#FF0A55A0" BorderBrush="#FF0A55A0" FontWeight="Medium" Height="Auto"/>
+
+    </Grid>
+
+</Window>
